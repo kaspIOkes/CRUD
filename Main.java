@@ -15,29 +15,17 @@ class Main {
             System.out.println("1. INSERT");
             System.out.println("2. DISPLAY");
             System.out.println("3. SEARCH");
-            System.out.println("4.DELETE");
-            System.out.println("5.UPDATE");
+            System.out.println("4. DELETE");
+            System.out.println("5. UPDATE");
+            System.out.println("0. EXIT");
             System.out.print("Enter Your Choice: ");
             choice  = scanItInt.nextInt();
 
             switch (choice){
                 case 1:
-                    int employeeNumber;
-                    boolean isValid = false;
-                    do {
-                        System.out.print("Enter employee No: ");
-                        employeeNumber = scanItInt.nextInt();
-                        System.err.println(employeeNumber + " is not a number!");
-                        if (scanItInt.hasNextInt()) isValid = true;
-
-
-                    } while  ( isValid);
-
 
                     System.out.print("Enter employee number: ");
-                    boolean isValid2 = scanItInt.next();
-
-
+                    int employeeNumber = scanItInt.nextInt();
                     System.out.print("Enter employee name: ");
                     String employeeName = scanItStr.nextLine();
                     System.out.print("Enter employee salary: ");
@@ -45,6 +33,7 @@ class Main {
 
                     collectIt.add(new Employee(employeeNumber, employeeName, employeeSalary));
                     break;
+                    
                 case 2:
                     System.out.println("--------------------");
                     Iterator<Employee> i = collectIt.iterator();
@@ -54,6 +43,7 @@ class Main {
                     }
                     System.out.println("--------------------");
                     break;
+                    
                 case 3:
                     boolean found = false;
                     System.out.println("Enter Employee number to search: ");
@@ -73,6 +63,7 @@ class Main {
                     }
                     System.out.println("--------------------");
                     break;
+                    
                 case 4:
                     found = false;
                     System.out.println("Enter Employee number to delete: ");
@@ -94,6 +85,7 @@ class Main {
                     }
                     System.out.println("--------------------");
                     break;
+                    
                 case 5:
                     found = false;
                     System.out.println("Enter Employee number to update: ");
